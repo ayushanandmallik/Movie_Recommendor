@@ -6,7 +6,29 @@
 
 
 <!--{{table|safe}}-->
-{{result}}
+<div class="card border-primary mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={{poster}} class="img-fluid rounded-start" alt="Poster">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">Release date: {{release_date}}</p>
+          <p class="card-text">Genre: {{genre}}</p>
+          <p class="card-text">Director: {{director}}</p>
+          <p class="card-text">Plot: {{plot}}</p>
+          <p class="card-text">Awards: {{awards}}</p>
+          <p class="card-text">Rotten Tomatoes: {{rotten_tomatoes}}</p>
+          <p class="card-text">Metascore: {{metacritic}}</p>
+          <p class="card-text">IMDb: {{imdbrating}}</p>
+          <p class="card-text">Boxoffice collection: {{boxoffice}}</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
 

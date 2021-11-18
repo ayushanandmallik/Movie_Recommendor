@@ -126,7 +126,7 @@ knn.fit(csr_data)
 
 
 def get_movie_recommendation(movie_name):
-    n=10
+    n=1
     movie_list= movies[movies['title'].str.contains(movie_name.title())]
     try:
         if len(movie_list):
