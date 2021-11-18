@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load admin_urls %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie_recommendor</title>
+</head>
+<body>
+<h1>Movie Recommendor</h1>
+
+<form action="{% url 'result' %}">
+    {% csrf_token %}
+    <p>last Movie you watched:</p>
+    <input type="text" name="watched">
+    <br>
+
+    <input type="submit" value="Movie List">
+
+
+
+</form>
+</body>
+</html>
