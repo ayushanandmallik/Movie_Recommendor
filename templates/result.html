@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Movie_recommendor</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %} Recommendation {% endblock %}
+{% block body %}
 <h1>Recommendations</h1>
 
+
+<!--{{table|safe}}-->
 {{result}}
 
-</body>
-</html>
+{% endblock %}
+

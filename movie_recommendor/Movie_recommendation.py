@@ -139,9 +139,9 @@ def get_movie_recommendation(movie_name):
             for val in rec_idx:
                 movie_idx= final_dataset.iloc[val[0]]['movieId']
                 idx= movies[movies['movieId']==movie_idx].index
-                recommend_frame.append({'Title':movies.iloc[idx]['title'].values[0],'Distance':val[1],'Genre':movies.iloc[idx]['genres'].values[0]})
-            df= pd.DataFrame(recommend_frame,index= range(1,n+1))
-            return df
+                recommend_frame.append({'Title':movies.iloc[idx]['title'].values[0],'Genre':movies.iloc[idx]['genres'].values[0]})
+            #df= pd.DataFrame(recommend_frame,index= range(1,n+1))
+            return recommend_frame
         else:
             return 'No movies found!!'
     except:

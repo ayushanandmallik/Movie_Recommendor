@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from movie_recommendor import Movie_recommendation
+import pandas as pd
 
 
 def home(request):
@@ -9,9 +10,11 @@ def result(request):
     watched= request.GET['watched']
 
     res= Movie_recommendation.get_movie_recommendation(watched)
-
-
-    return  render(request,'result.html',{'result':res})
+    #res= result.to_html()
+    mov= []
+    for i in res:
+        mov.append(i['Title'])
+    return  render(request,'result.html',{'result':mov})
 
 
 
