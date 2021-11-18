@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-{% load admin_urls %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Movie_recommendor</title>
-</head>
-<body>
+
+{% extends "base.html" %}
+
+{% block body %}
 <h1>Movie Recommendor</h1>
 
 <form action="{% url 'result' %}">
@@ -19,5 +15,5 @@
 
 
 </form>
-</body>
-</html>
+
+{% endblock %}
