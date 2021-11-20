@@ -1,16 +1,46 @@
 from omdbapi.movie_search import GetMovie
+from tmdbv3api import TMDb
+from tmdbv3api import Movie
+import os
+from dotenv import load_dotenv
 
 
-movie= GetMovie(api_key='12d68b8b')
+load_dotenv()
+
+omdb_api_key= os.getenv('omdb_api_key')
+tmdb_api_key= os.getenv('tmdb_api')
+
+omdb_m= GetMovie(api_key=omdb_api_key)
 
 
 def reverse_string(sentence):
     words = sentence.split(' ')
     reverse_sentence = ' '.join(reversed(words))
     return reverse_sentence
-#print(reverse_string('Avengers'))
+
 def movieinfo(name):
-    return movie.get_movie(reverse_string(name))
+    return omdb_m.get_movie(name)
+
+
+
+tmdb= TMDb()
+tmdb.api_key= tmdb_api_key
+
+tmdb.language= 'en'
+tmdb.debug= True
+
+movie= Movie()
+def search(m):
+    return movie.search(m)
+
+def rec(m):
+    s= search(m)
+    r= movie.recommendations(s[0]['id'])
+    recommended_movies=[]
+    for i in r:
+        recommended_movies.append(i['title'])
+    return r
+
 
 
 

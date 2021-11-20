@@ -2,7 +2,7 @@
 
 {% block title %} Recommendation {% endblock %}
 {% block body %}
-<h1>Recommendations</h1>
+<h1>Searched Movie</h1>
 
 
 <!--{{table|safe}}-->
@@ -29,6 +29,35 @@
     </div>
   </div>
 </div>
+
+<br>
+<h2>Recommended Movies</h2>
+<br>
+{% for movies in recommended_movies %}
+  <div class="card border-primary mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+<div class="col-md-4">
+      <img src={{movies.poster}} class="img-fluid rounded-start" alt="Poster">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{movies.title}}</h5>
+        <p class="card-text">Release date: {{movies.released}}</p>
+          <p class="card-text">Genre: {{movies.genre}}</p>
+          <p class="card-text">Director: {{movies.director}}</p>
+          <p class="card-text">Plot: {{movies.plot}}</p>
+          <p class="card-text">Awards: {{movies.awards}}</p>
+
+          <p class="card-text">Metascore: {{movies.metascore}}</p>
+          <p class="card-text">IMDb: {{movies.imdbrating}}</p>
+          <p class="card-text">Boxoffice collection: {{mvoies.boxoffice}}</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 
 {% endblock %}
 

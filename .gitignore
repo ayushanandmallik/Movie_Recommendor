@@ -1,3 +1,3 @@
 movie_recommendor/settings.py
 test.py
-.env
+movie_recommendor/.env
