@@ -1,20 +1,68 @@
-body, html {
+html{
+font-family: Arial, Helvetica, sans-serif;
+}
+.cover{
+background-color: rgba(0, 0, 0, 0.5);
+   position: absolute;
+   top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
     height: 100%;
 }
-
-.bg {
-    background-image: url('/static/images/bgimage.jpg');
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.logo{
+margin-left:50%;
 }
-/*
-#third {
-    background: url("/static/images/bgimage.jpg") 50% 0 no-repeat fixed;
+form{
+text-align: center;
+padding: 50px;
+}
+.input_name{
+border-radius: 10px;
+border: 2px solid red;
+width: 250px;
+height: 25px;
+margin-bottom: 10px;
+}
 
-    height: 650px;
-    padding: 100px 0 0 0;
+label{
+color: white;
+}
+.submit_btn{
+background-color: #008CBA;
+border: none;
+border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
-
-}*/
+ul.nav {
+    margin:0;
+    padding:0;
+    list-style:none;
+    height:36px; line-height:36px;
+    background:#0d7963; /* you can change the backgorund color here. */
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:13px;
+}
+ul.nav li {
+    border-right:1px solid #189b80; /* you can change the border color matching to your background color */
+    float:left;
+}
+ul.nav a {
+    display:block;
+    padding:0 28px;
+    color:#ccece6;
+    text-decoration:none;
+}
+ul.nav a:hover,
+ul.nav li.current a {
+    background:#086754;
+}

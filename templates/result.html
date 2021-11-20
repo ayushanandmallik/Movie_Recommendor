@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %} Recommendation {% endblock %}
 {% block body %}
-<h1>Searched Movie</h1>
+<h1 style="color:white;">Searched Movie</h1>
 
 
 <!--{{table|safe}}-->
+
 <div class="card border-primary mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
@@ -31,8 +32,9 @@
 </div>
 
 <br>
-<h2>Recommended Movies</h2>
+<h2 style="color:white;">Recommended Movies</h2>
 <br>
+
 {% for movies in recommended_movies %}
   <div class="card border-primary mb-3" style="max-width: 540px;">
   <div class="row g-0">

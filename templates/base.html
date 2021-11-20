@@ -1,8 +1,10 @@
 <!doctype html>
 {% load static %}
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{% block head %}
   <head>
-    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+
+  <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +14,10 @@
 
     <title>{% block title %}Movie_recommendor{% endblock %}</title>
   </head>
-  <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+{% endblock %}
+  <body style="background: url(static/images/bgimage.jpg);">
+  <div class="cover">
+  <!--<nav>
   <div class="container-fluid">
     <a class="navbar-brand" href="/">MR</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +32,17 @@
       </div>
     </div>
   </div>
-</nav>
+</nav>-->
+
+<ul class="nav">
+  <li><a href="/">Home</a></li>
+  <li><a href="#">About Us</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+
+
+
+
     {% block body %}{% endblock %}
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -41,5 +55,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+  </div>
   </body>
+
 </html>

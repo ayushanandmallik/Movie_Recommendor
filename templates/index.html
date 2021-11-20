@@ -1,22 +1,29 @@
 
 {% extends "base.html" %}
-
+{% load static %}
+{% block head %}
+<link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+{% endblock %}
 {% block body %}
-<h1>Movie Recommendor</h1>
+<!--<h1 style="color:blue">Movie Recommendor</h1>-->
 
+
+<img src="{% static 'images/logo.png' %}" class="logo">
 <form action="{% url 'result' %}">
     {% csrf_token %}
-    <!--<p>last Movie you watched:</p>
-    <input type="text" name="watched">
-    <br>-->
-    <div class="input-group mb-3">
+
+    <label for="watched">Enter a movie name:</label>
+    <input type="text" name="watched" class="input_name">
+    <br>
+    <!--<div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Last movie you watched</span>
   <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="watched">
-</div>
-    <input type="submit" value="Movie List">
+</div>-->"
+    <input type="submit" value="Search" class="submit_btn">
 
 
 
 </form>
+
 
 {% endblock %}
