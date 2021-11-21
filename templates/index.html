@@ -8,7 +8,7 @@
 <!--<h1 style="color:blue">Movie Recommendor</h1>-->
 
 
-<img src="{% static 'images/logo.png' %}" class="logo">
+
 <form action="{% url 'result' %}">
     {% csrf_token %}
 
@@ -18,12 +18,29 @@
     <!--<div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Last movie you watched</span>
   <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="watched">
-</div>-->"
+</div>-->
     <input type="submit" value="Search" class="submit_btn">
 
 
 
 </form>
 
+<p style="font-style: italic;">OR</p>
+<h4>Search by genre</h4>
+<br>
+<form action="{% url 'genre' %}">
+  {% csrf_token %}
+  <label for="genre">Choose a genre</label>
+  <select id="genre" name="genre">
+    <option value="action">Action</option>
+    <option value="adventure">Adventure</option>
+    <option value="drama">Drama</option>
+    <option value="comedy">Comedy</option>
+
+  </select>
+<br>
+  <input type="submit" value="Search" class="submit_btn">
+
+</form>
 
 {% endblock %}
