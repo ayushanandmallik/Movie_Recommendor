@@ -43,4 +43,16 @@
 
 </form>
 
+<br>
+<div class="popular_movies">
+<h3>Popular Movies:</h3>
+
+{% for movies in popular %}
+  <h4>{{movies.title}}</h4>
+  
+
+  {% endfor %}
+
+  </div>
+
 {% endblock %}

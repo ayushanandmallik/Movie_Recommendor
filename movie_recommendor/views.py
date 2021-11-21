@@ -4,7 +4,9 @@ import pandas as pd
 
 
 def home(request):
-    return render(request,'index.html')
+    popular= imdb.popular_movies()
+    
+    return render(request,'index.html',{'popular':popular})
 
 
 def result(request):

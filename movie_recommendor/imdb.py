@@ -41,6 +41,13 @@ def rec(m):
         recommended_movies.append(i['title'])
     return r
 
+def popular_movies():
+    popular= movie.popular()
+    pm=[]
+    for movies in popular:
+        pm.append({'title':movies['original_title'], 'poster':movies['poster_path']})
+    return pm
 
+print(popular_movies())
 
 
