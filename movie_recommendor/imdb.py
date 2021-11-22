@@ -44,10 +44,12 @@ def rec(m):
 def popular_movies():
     popular= movie.popular()
     pm=[]
+    #for i in range(10):
+    #    pm.append({'title':popular[i]['original_title'], 'poster':movieinfo(popular[i]['original_title'])['poster']})
     for movies in popular:
         pm.append({'title':movies['original_title'], 'poster':movieinfo(movies['original_title'])['poster']})
     return pm
 
-#print(popular_movies())
+print(popular_movies())
 
 

@@ -73,6 +73,15 @@ ul.nav li.current a {
     background:#086754;
 }
 
+.pop_img{
+    /*position: absolute;*/
+    display: block;
+    max-width: 300px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+}
+
 .popular_movies{
     box-sizing: border-box;
     text-align: center;
@@ -80,8 +89,8 @@ ul.nav li.current a {
 
 .column{
     float:left;
-    width: 25%;
-    padding: 0 50px;
+    /*width: 25%;*/
+    padding: 0 15px;
 }
 
 .row{
@@ -105,3 +114,11 @@ ul.nav li.current a {
       margin-bottom: 20px;
     }
   }
+
+  .button {
+    display: none;
+}
+
+.pop_img:hover + .button, .button:hover {
+    display: inline-block;
+}
