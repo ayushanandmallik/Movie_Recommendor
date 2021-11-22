@@ -50,6 +50,6 @@ def popular_movies():
      #   pm.append({'title':movies['original_title'], 'poster':movieinfo(movies['original_title'])['poster']})
     return pm
 
-#print(popular_movies())
+#print(rec('Spider-Man: No Way Home'))
 
 

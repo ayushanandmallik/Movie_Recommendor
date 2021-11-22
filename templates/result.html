@@ -5,11 +5,11 @@
 {% endblock %}
 {% block title %} Recommendation {% endblock %}
 {% block body %}
-<h1 style="color:rgb(0, 192, 206);">Searched Movie</h1>
+
 
 
 <!--{{table|safe}}-->
-
+<!--
 <div class="card border-primary mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
@@ -33,36 +33,53 @@
     </div>
   </div>
 </div>
+-->
+<h1 style="color:rgb(0, 192, 206);">Searched Movie</h1>
+<div class="searched">
+  
+  <img src={{poster}} class="s_img" alt="Poster">
+  <div class="searched_details">
+  <h2 class="s_title">{{title}}</h2>
+        <p class="s_info">Release date: {{release_date}}</p>
+          <p class="s_info">Genre: {{genre}}</p>
+          <p class="s_info">Director: {{director}}</p>
+          <p class="s_info">Plot: {{plot}}</p>
+          <p class="s_info">Awards: {{awards}}</p>
+          <p class="s_info">Rotten Tomatoes: {{rotten_tomatoes}}</p>
+          <p class="s_info">Metascore: {{metacritic}}</p>
+          <p class="s_info">IMDb: {{imdbrating}}</p>
+          <p class="s_info">Boxoffice collection: {{boxoffice}}</p>
 
-<br>
-<h2 style="color:rgb(219, 1, 147);">Recommended Movies</h2>
-<br>
-
-{% for movies in recommended_movies %}
-  <div class="card border-primary mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-<div class="col-md-4">
-      <img src={{movies.poster}} class="img-fluid rounded-start" alt="Poster">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{movies.title}}</h5>
-        <p class="card-text">Release date: {{movies.released}}</p>
-          <p class="card-text">Genre: {{movies.genre}}</p>
-          <p class="card-text">Director: {{movies.director}}</p>
-          <p class="card-text">Plot: {{movies.plot}}</p>
-          <p class="card-text">Awards: {{movies.awards}}</p>
-
-          <p class="card-text">Metascore: {{movies.metascore}}</p>
-          <p class="card-text">IMDb: {{movies.imdbrating}}</p>
-          <p class="card-text">Boxoffice collection: {{mvoies.boxoffice}}</p>
-         <a href="{% url 'seemore' movies.title %}">See more</a>
-
-      </div>
-    </div>
-  </div>
 </div>
-{% endfor %}
 
+</div>
+
+
+
+<br>
+
+<br>
+<div class="recommendation">
+  <h2 style="color:rgb(219, 1, 147);">Recommended Movies</h2>
+  {% for movies in recommended_movies %}
+  <div id="wrapper">
+    <div class="row">
+    <div class="column">
+      <div class="card">
+        <div id="image_div">
+          <p class="img_wrapper">
+        <img src={{movies.poster}} class="pop_img">
+        <span><a href="{% url 'seemore' movies.title %}">{{movies.title}}</a></span>
+        <!--<span><input type="button" href="{% url 'seemore' movies.title %}" value={{movies.title}}></span>-->
+       
+  </p>
+      </div></div>
+    </div>
+    </div>
+  
+  </div>
+    {% endfor %}
+  </div>
+  
 {% endblock %}
 

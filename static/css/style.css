@@ -80,7 +80,9 @@ ul.nav li.current a {
     max-height: 250px;
     width: auto;
     height: auto;
+    
 }
+
 
 .popular_movies{
     box-sizing: border-box;
@@ -128,7 +130,7 @@ ul.nav li.current a {
   }
   #image_div .img_wrapper:hover img
   {
-   -webkit-filter: blur(1.7px);
+   -webkit-filter: blur(1px);
   }
   #image_div .img_wrapper span
   {
@@ -157,4 +159,32 @@ ul.nav li.current a {
     background-color: green;
     color: white;
     border-radius: 10px;
+  }
+
+.searched{
+  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-right: 400px;
+  text-align: left;
+  padding: 20px;
+
+}
+
+
+
+.recommendation{
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 100px;
+}
+
+  .s_img{
+    float: left;
+    display: block;
+    max-width: 500px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    padding-right: 10px;
   }
