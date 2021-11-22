@@ -1,6 +1,8 @@
 html{
 font-family: Arial, Helvetica, sans-serif;
 text-align: center;
+background-color: black;
+color: white;
 }
 /*
 .cover{
@@ -31,7 +33,7 @@ margin-bottom: 10px;
 }
 
 label{
-color: black;
+color: white;
 }
 .submit_btn{
 background-color: #f703ce;
@@ -70,3 +72,36 @@ ul.nav a:hover,
 ul.nav li.current a {
     background:#086754;
 }
+
+.popular_movies{
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.column{
+    float:left;
+    width: 25%;
+    padding: 0 50px;
+}
+
+.row{
+    margin: 0 10px;
+    
+}
+
+.card {
+    box-shadow: 0 2px 2px 0 rgba(116, 3, 3, 0.2); 
+    padding: 2px;
+    text-align: center;
+    background-color: #000000;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }

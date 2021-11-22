@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
+{% block head %}
+<link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+{% endblock %}
 {% block title %} Recommendation {% endblock %}
 {% block body %}
-<h1 style="color:white;">Searched Movie</h1>
+<h1 style="color:rgb(0, 192, 206);">Searched Movie</h1>
 
 
 <!--{{table|safe}}-->
@@ -32,7 +35,7 @@
 </div>
 
 <br>
-<h2 style="color:white;">Recommended Movies</h2>
+<h2 style="color:rgb(219, 1, 147);">Recommended Movies</h2>
 <br>
 
 {% for movies in recommended_movies %}

@@ -45,9 +45,9 @@ def popular_movies():
     popular= movie.popular()
     pm=[]
     for movies in popular:
-        pm.append({'title':movies['original_title'], 'poster':movies['poster_path']})
+        pm.append({'title':movies['original_title'], 'poster':movieinfo(movies['original_title'])['poster']})
     return pm
 
-print(popular_movies())
+#print(popular_movies())
 
 

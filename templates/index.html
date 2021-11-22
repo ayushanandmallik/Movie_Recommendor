@@ -46,10 +46,25 @@
 <br>
 <div class="popular_movies">
 <h3>Popular Movies:</h3>
-
 {% for movies in popular %}
-  <h4>{{movies.title}}</h4>
-  
+  <!--<h4>{{movies.title}}</h4>
+  <img src={{movies.poster}}>-->
+
+  <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src={{movies.poster}}>
+      <h4>{{movies.title}}</h4>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  </div>
 
   {% endfor %}
 
