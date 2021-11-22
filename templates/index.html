@@ -47,23 +47,24 @@
 <div class="popular_movies">
 <h3>Popular Movies:</h3>
 {% for movies in popular %}
-<div class="container">
+<div id="wrapper">
   <div class="row">
   <div class="column">
     <div class="card">
-      
+      <div id="image_div">
+        <p class="img_wrapper">
       <img src={{movies.poster}} class="pop_img">
-      
-      <!--<a href="{% url 'seemore' movies.title %}">See more</a>-->
-      <div class="button"><a href="{% url 'seemore' movies.title %}">See More</a></div>
-
-    </div>
+      <span><a href="{% url 'seemore' movies.title %}">{{movies.title}}</a></span>
+      <!--<span><input type="button" href="{% url 'seemore' movies.title %}" value={{movies.title}}></span>-->
+     
+</p>
+    </div></div>
   </div>
   </div>
 
 </div>
   {% endfor %}
 
-  </div>
+  </div></div>
 
 {% endblock %}
