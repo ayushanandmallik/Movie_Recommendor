@@ -1,3 +1,4 @@
+from threading import active_count
 from django.shortcuts import render
 from movie_recommendor import Movie_recommendation, imdb
 import pandas as pd
@@ -17,7 +18,8 @@ def result(request):
     s_overview= searched_movie[0]['overview']
     s_poster= 'https://image.tmdb.org/t/p/w500'+searched_movie[0]['poster_path']
     s_released= searched_movie[0]['release_date']
-    
+    actors= imdb.actors(s_title)
+
 
     try:
         mov= imdb.movieinfo(s_title)
@@ -37,7 +39,7 @@ def result(request):
             rec_mov.append(mov)
         return  render(request,'result.html',{'title':s_title,'release_date':s_released,'genre':genre,'director':director,'plot':s_overview,
                                             'awards':awards,'poster':s_poster,'rotten_tomatoes':rotten_tomatoes,'metacritic':metacritic,
-                                            'imdbrating':imdbrating,'boxoffice':boxoffice,'recommended_movies':rec_mov})
+                                            'imdbrating':imdbrating,'boxoffice':boxoffice,'recommended_movies':rec_mov,'actors':actors})
 
     except:
         recommended_movies= imdb.rec(s_title)
@@ -47,7 +49,7 @@ def result(request):
             rec_mov.append(mov)
         return  render(request,'result.html',{'title':s_title,'release_date':s_released,'genre':NA,'director':NA,'plot':s_overview,
                                             'awards':NA,'poster':s_poster,'rotten_tomatoes':NA,'metacritic':NA,
-                                            'imdbrating':NA,'boxoffice':NA,'recommended_movies':rec_mov})
+                                            'imdbrating':NA,'boxoffice':NA,'recommended_movies':rec_mov,'actors':actors})
 
 
 def seemore(request, movie_name):
@@ -59,6 +61,7 @@ def seemore(request, movie_name):
     s_overview= searched_movie[0]['overview']
     s_poster= 'https://image.tmdb.org/t/p/w500'+searched_movie[0]['poster_path']
     s_released= searched_movie[0]['release_date']
+    actors= imdb.actors(s_title)
     try:
         mov= imdb.movieinfo(s_title)
         genre= mov['genre']
@@ -78,7 +81,7 @@ def seemore(request, movie_name):
     
         return  render(request,'result.html',{'title':s_title,'release_date':s_released,'genre':genre,'director':director,'plot':s_overview,
                                             'awards':awards,'poster':s_poster,'rotten_tomatoes':rotten_tomatoes,'metacritic':metacritic,
-                                            'imdbrating':imdbrating,'boxoffice':boxoffice,'recommended_movies':rec_mov})
+                                            'imdbrating':imdbrating,'boxoffice':boxoffice,'recommended_movies':rec_mov,'actors':actors})
 
     except:
         recommended_movies= imdb.rec(s_title)
@@ -88,4 +91,4 @@ def seemore(request, movie_name):
             rec_mov.append(mov)
         return  render(request,'result.html',{'title':s_title,'release_date':s_released,'genre':NA,'director':NA,'plot':s_overview,
                                             'awards':NA,'poster':s_poster,'rotten_tomatoes':NA,'metacritic':NA,
-                                            'imdbrating':NA,'boxoffice':NA,'recommended_movies':rec_mov})
+                                            'imdbrating':NA,'boxoffice':NA,'recommended_movies':rec_mov, 'actors':actors})

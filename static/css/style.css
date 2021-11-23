@@ -4,6 +4,9 @@ text-align: center;
 background-color: black;
 color: white;
 }
+img{
+  border-radius: 5px;
+}
 /*
 .cover{
 background-color: rgba(0, 0, 0, 0.5);
@@ -80,7 +83,7 @@ ul.nav li.current a {
     max-height: 250px;
     width: auto;
     height: auto;
-    
+    border-radius: 5px;
 }
 
 
@@ -163,7 +166,7 @@ ul.nav li.current a {
 
 .searched{
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   margin-right: 400px;
   text-align: left;
   padding: 20px;
@@ -173,7 +176,7 @@ ul.nav li.current a {
 
 
 .recommendation{
-  box-sizing: border-box;
+  
   text-align: center;
   margin-top: 100px;
 }
@@ -188,3 +191,22 @@ ul.nav li.current a {
     border-radius: 5px;
     padding-right: 10px;
   }
+
+  .cast{
+
+   
+    text-align: center;
+   /* margin-bottom: 100px;*/
+    padding-bottom: 100px;
+
+  }
+  .act_img{
+    /*position: absolute;*/
+    display: block;
+    max-width: 250px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    
+}

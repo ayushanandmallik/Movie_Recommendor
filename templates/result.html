@@ -55,7 +55,31 @@
 </div>
 
 
+<div class="cast">
+  <h2>Cast</h2>
 
+  {% for cast in actors %}
+
+  
+  
+  <div id="wrapper">
+    <div class="row">
+    <div class="column">
+      <div class="card">
+        <div id="image_div">
+          <p class="img_wrapper">
+        <img src="https://image.tmdb.org/t/p/w500{{cast.picture}}" class="act_img">
+        <span><p>{{cast.actor}}</p></span>
+        
+       
+  </p>
+      </div></div>
+    </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+<br>
 <br>
 
 <br>

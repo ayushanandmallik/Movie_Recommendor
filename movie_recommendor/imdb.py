@@ -50,6 +50,24 @@ def popular_movies():
      #   pm.append({'title':movies['original_title'], 'poster':movieinfo(movies['original_title'])['poster']})
     return pm
 
-#print(rec('Spider-Man: No Way Home'))
+
+def actors(m):
+    s= search(m)[0]['id']
+    a= movie.credits(s)
+    res=[]
+    
+    for cr in a['cast']:
+        if cr['known_for_department']=='Acting':
+            res.append({'actor':cr['name'],'picture':cr['profile_path']})
+    
+    no_of_actor= len(res)
+    if no_of_actor<=10:
+        return res
+    return res[:10]
+    
+
+
+#print(actors('eternals'))
+#print(actor_img('/k3W1XXddDOH2zibPkNotIh5amHo.jpg'))
 
 
