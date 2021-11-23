@@ -3,6 +3,9 @@ from tmdbv3api import TMDb
 from tmdbv3api import Movie
 import os
 from dotenv import load_dotenv
+import requests
+import json
+import time
 
 
 load_dotenv()
@@ -46,8 +49,6 @@ def popular_movies():
     pm=[]
     for i in range(10):
         pm.append({'title':popular[i]['original_title'], 'poster':movieinfo(popular[i]['original_title'])['poster']})
-    #for movies in popular:
-     #   pm.append({'title':movies['original_title'], 'poster':movieinfo(movies['original_title'])['poster']})
     return pm
 
 
@@ -66,7 +67,22 @@ def actors(m):
     return res[:10]
     
 
+tmdb_api= requests.Session()
+tmdb_api.params= {'api_key':tmdb_api_key}
 
+def trending():
+    url= 'https://api.themoviedb.org/3/trending/movie/day?api_key='+tmdb_api_key
+    movies=[]
+    j= tmdb_api.get(url)
+    json_response= json.loads(j.text)
+    
+    m= json_response['results']
+    tr=[]
+    for i in range(10):
+        tr.append({'title':m[i]['original_title'], 'poster':movieinfo(m[i]['original_title'])['poster']})
+    return tr
+
+#print(trending())
 #print(actors('eternals'))
 #print(actor_img('/k3W1XXddDOH2zibPkNotIh5amHo.jpg'))
 

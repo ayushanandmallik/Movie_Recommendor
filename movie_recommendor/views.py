@@ -6,8 +6,8 @@ import pandas as pd
 
 def home(request):
     popular= imdb.popular_movies()
-    
-    return render(request,'index.html',{'popular':popular})
+    trending= imdb.trending()
+    return render(request,'index.html',{'popular':popular,'trending':trending})
 
 
 def result(request):
