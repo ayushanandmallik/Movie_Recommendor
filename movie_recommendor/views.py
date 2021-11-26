@@ -1,8 +1,8 @@
 from threading import active_count
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from movie_recommendor import Movie_recommendation, imdb, forms
 from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib import messages
 
 def home(request):
     popular= imdb.popular_movies()
@@ -99,7 +99,8 @@ def register(request):
         form= forms.RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-        #return render(request, 'profile.html')
+            messages.success(request, 'Registeration successful, login to continue')
+            return redirect('login')
     context={'form':form}
     return render(request, 'register.html', context=context)
 
