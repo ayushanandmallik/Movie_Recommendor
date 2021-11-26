@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+<link rel="stylesheet"  href="{%  static  'css/form_style.css'  %}">
+{% endblock %}
+{% block body %}
+
+<h2>Register</h2>
+
+<form method="POST" action=''>
+    {% csrf_token s%}
+{% for field in form%}
+    {{field.label}}
+    {{field}}
+    <br>
+    <p></p>
+
+{% endfor %}
+<input type="submit" name="Create_user">
+</form>
+
+{% endblock %}

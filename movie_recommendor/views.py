@@ -1,7 +1,7 @@
 from threading import active_count
 from django.shortcuts import render
-from movie_recommendor import Movie_recommendation, imdb
-import pandas as pd
+from movie_recommendor import Movie_recommendation, imdb, forms
+from django.contrib.auth.forms import UserCreationForm
 
 
 def home(request):
@@ -92,3 +92,17 @@ def seemore(request, movie_name):
         return  render(request,'result.html',{'title':s_title,'release_date':s_released,'genre':NA,'director':NA,'plot':s_overview,
                                             'awards':NA,'poster':s_poster,'rotten_tomatoes':NA,'metacritic':NA,
                                             'imdbrating':NA,'boxoffice':NA,'recommended_movies':rec_mov, 'actors':actors})
+
+def register(request):
+    form= forms.RegisterForm()
+    if request.method=='POST':
+        form= forms.RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+        #return render(request, 'profile.html')
+    context={'form':form}
+    return render(request, 'register.html', context=context)
+
+
+def login(request):
+    return render(request,'login.html')

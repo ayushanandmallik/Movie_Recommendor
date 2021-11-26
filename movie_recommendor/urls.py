@@ -29,5 +29,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('result', views.result, name='result'),
     path('seemore/<str:movie_name>', views.seemore, name='seemore'),
+    path('register', views.register, name='register'),
+    path('login', views.login, name='login'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
